@@ -64,10 +64,20 @@ h1, h2, h3, h4, h5, h6 {
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  flex-wrap:  wrap;
+  display:  flex;
+  width:  100%;
+
 }
+
+.detailcontent {
+  margin-top: 131px;
+}
+
 #footer {
   background-color: #444;
   color: #aaa;
@@ -100,7 +110,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    
 }
 
 /* Display list items side by side */
@@ -172,6 +182,9 @@ nav h1 a {
   font-family: Arial,sans-serif;
   width: 100%;
 }
+
+
+
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
@@ -179,6 +192,7 @@ nav h1 a {
   object-fit: cover;
   height: 248px;
   width: 100%;
+
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -207,6 +221,10 @@ nav h1 a {
   text-transform: uppercase;
 }
 
+#map-container {
+  width: 100%;
+}
+
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: fixed;
@@ -216,22 +234,15 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%;
+  height: 380px;
+  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
   height: 100%;
   width: 100%;
 }
-.inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 50%;
-}
+
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -243,7 +254,11 @@ nav h1 a {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -256,19 +271,21 @@ nav h1 a {
   font-weight: 300;
   letter-spacing: 10px;
   margin: 0 0 20px;
-  padding: 2px 0;
+  padding: 10px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
+  padding: 20px;
+  width: 100%;
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  
 }
 #reviews-container h2 {
   color: #f58500;
@@ -283,20 +300,50 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
-  overflow: hidden;
-  padding: 0 20px 20px;
-  position: relative;
-  width: 85%;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 20px;
+  
+  
 }
 #reviews-list li p {
-  margin: 0 0 10px;
+
 }
 #restaurant-hours td {
   color: #666;
+}
+
+.rating {
+  margin-top: 10px;
+  background: orange;
+  display: inline-block;
+  color: white;
+  padding: 4px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  margin-left: 10px;
+}
+
+.review-text {
+  padding: 10px;
+  margin: 0px;
+}
+
+.item-header {
+  border-top-left-radius: 20px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #252831;
+  padding-right: 16px;
+}
+
+.item-header p {
+  color: white;
 }
 
 @media only screen and (max-width: 390px) {
@@ -318,7 +365,6 @@ nav h1 a {
   
 }
 
-
 @media only screen and (min-width: 568px) {
 
   #restaurants-list {
@@ -331,7 +377,7 @@ nav h1 a {
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   
   #restaurants-list li  {
@@ -339,11 +385,36 @@ nav h1 a {
     width: 49.5%;
     margin-bottom: 10px;
 
+
   }
   
 }
 
 @media only screen and (min-width: 800px) {
+
+  .inside #maincontent {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .inside #map-container {
+    width: 30%;
+    margin-top: 92px;
+    order: 1;
+  }
+
+  .inside #restaurant-container {
+    width: 30%;
+    order: 0;
+    
+  }
+
+  .inside #reviews-container {
+    width: 30%;
+    order: 2;
+    
+  }
+
 
 
   
