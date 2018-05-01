@@ -1,0 +1,14 @@
+{
+  "name": "Restaurant Review",
+  "short_name": "RestReview",
+  "background_color": "#fff",
+  "theme_color": "#252831",
+  "scope": "/",
+  "icons": [{
+      "src": "homescreen512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+  }],
+  "display": "standalone",
+  "start_url": "/"
+}
