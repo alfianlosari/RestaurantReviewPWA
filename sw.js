@@ -6,7 +6,6 @@ self.addEventListener('install', (event) => {
             .then((cache) => 
                 cache.addAll([
                     'css/styles.css',
-                    'data/restaurants.json',
                     'js/idb.js',
                     'js/dbhelper.js',
                     'js/main.js',
